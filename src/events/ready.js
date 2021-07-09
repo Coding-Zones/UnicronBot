@@ -34,7 +34,6 @@ module.exports = async (client) => {
       guild.roles.cache.find(r => r.name.toLowerCase() === 'admin' || r.name.toLowerCase() === 'administrator');
     const modRole = guild.roles.cache.find(r => r.name.toLowerCase() === 'mod' || r.name.toLowerCase() === 'moderator');
     const muteRole = guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
-    const crownRole = guild.roles.cache.find(r => r.name === 'The Crown');
 
     /** ------------------------------------------------------------------------------------------------
      * UPDATE TABLES
@@ -50,8 +49,7 @@ module.exports = async (client) => {
       modLog ? modLog.id : null,
       adminRole ? adminRole.id : null,
       modRole ? modRole.id : null,
-      muteRole ? muteRole.id : null,
-      crownRole ? crownRole.id : null
+      muteRole ? muteRole.id : null
     );
     
     // Update users table
@@ -75,7 +73,6 @@ module.exports = async (client) => {
     for (const id of currentMemberIds) {
       if (!guild.members.cache.has(id)) {
         client.db.users.updateCurrentMember.run(0, id, guild.id);
-        client.db.users.wipeTotalPoints.run(id, guild.id);
       }
     }
 
@@ -97,14 +94,8 @@ module.exports = async (client) => {
         await verificationChannel.messages.fetch(verificationMessageId);
       } catch (err) { // Message was deleted
         client.logger.error(err);
+       }
       }
-    }
-
-    /** ------------------------------------------------------------------------------------------------
-     * CROWN ROLE
-     * ------------------------------------------------------------------------------------------------ */ 
-    // Schedule crown role rotation
-    client.utils.scheduleCrown(client, guild);
 
   }
 
