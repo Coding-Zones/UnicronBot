@@ -79,7 +79,4 @@ message.client.emit('moderation' , message)
   // Auto publis messages in an announcement channel
   if (message.channel.type === 'news') {
     message.crosspost()
-}
-  // Update points with messagePoints value
-  if (pointTracking) client.db.users.updatePoints.run({ points: messagePoints }, message.author.id, message.guild.id);
 };
