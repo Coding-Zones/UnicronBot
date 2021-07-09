@@ -97,8 +97,6 @@ module.exports = async (client) => {
        }
       }
 
-  }
-
   // Remove left guilds
   const dbGuilds = client.db.settings.selectGuilds.all();
   const guilds = client.guilds.cache.array();
