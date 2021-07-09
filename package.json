@@ -69,12 +69,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://sabattle@github.com/sabattle/CalypsoBot.git"
+    "url": "git+https://Coding-Zones@github.com/Coding-Zones/UnicronBot.git"
   },
   "author": "Sebastian Battle",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/sabattle/CalypsoBot/issues"
+    "url": "https://github.com/Coding-Zones/UnicronBot/issues"
   },
-  "homepage": "https://github.com/sabattle/CalypsoBot#readme"
+  "homepage": "https://github.com/Coding-Zones/UnicronBot/blob/main/README.md"
 }
