@@ -88,3 +88,8 @@ After your `config.json` file is built, you have enable `Privileged Intents` on 
 Once done, feel free to launch Unicron using the command `node app.js` or `nodemon app.js`. If on Linux, you can also kick off using the `start.sh` script. If you need additional help setting up, join the [Unicron Support Server](https://discord.com/invite/3rPangn4uT)!
 
 **Important Note:** Do not use Heroku to host Unicron! Unicron uses SQLite as its database which backs up its data store on disk. Heroku clears its contents often, so your database will be wiped. Read more [here](https://devcenter.heroku.com/articles/sqlite3).
+
+## Credits
+
+* **Itz_Danny** - *Initial work** - [github](https://github.con/Itz-Daniel)
+* **Sebastian Battle** - *Initial work* - [github](https://github.com/sabattle)
